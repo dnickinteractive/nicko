@@ -1,0 +1,19 @@
+{
+  "name": "Nicko",
+  "version": "1.0.0",
+  "description": "Starter Web Project Framework",
+  "main": "index.js",
+  "scripts": {
+    "nicko": "gulp"
+  },
+  "author": "Newman Barreto",
+  "license": "GLP",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1"
+  }
+}
