@@ -1,0 +1,57 @@
+/*
+// - Elements
+//  =================================================================
+//   Include styles only for HTML tags here.
+//   These styles set the base or default behavior of HTML elements.
+//
+//  =================================================================
+*/
+
+html {
+    color: $site-font-color;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+
+
+//  A better looking default horizontal rule. (1)
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+// Allow only vertical resizing of textareas. (1)
+
+textarea {
+    resize: vertical;
+}
+
+
+/*
+ * Remove text-shadow in selection highlight. (1)
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    @if $selection-color { background: $selection-color; }
+    text-shadow: none;
+}
+
+::selection {
+    //background: #b3d4fd; develop this with SASS if statement
+    text-shadow: none;
+}
+
+
+
+/*
+ * References:
+ * 1. https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ */

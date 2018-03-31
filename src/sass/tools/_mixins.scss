@@ -1,0 +1,88 @@
+/*
+// - Mixins
+//  =======================================================
+//   Include al useful mixins here.
+//
+//  =======================================================
+*/
+
+
+/* -----------------------------------------------------------------------------
+ * Font Smoothing - 
+ * Test and include according your font appearance.
+ * It can be used broadly with "body" tag, in specific classes/rules
+ * or in special screens using @media queries.
+ * - https://www.zachleat.com/web/font-smooth/
+ * - http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+ * .usage { @include font-smooth(); }
+ */
+
+@mixin font-smooth() {
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* -----------------------------------------------------------------------------
+ * Wrapper - 
+ * https://css-tricks.com/best-way-implement-wrapper-css/
+ * .usage { @include wrap($width: 960px, $padding: 10px); }
+ */
+
+@mixin wrap($width, $padding: 0) {
+	max-width: $width;
+	margin-right: auto;
+	margin-left:  auto;
+	padding-right: $padding;
+	padding-left:  $padding;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Clearfix: contain floats 
+ * Source: http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+ * .usage { @include clearfix(); }
+ */
+
+@mixin clearfix() {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Hidden Visually:
+ * Hide elements only visually, but have it available for screen readers.
+ * Source: https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
+ * .usage { @include visuallyhidden(); }
+ */
+
+@mixin visuallyhidden() {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    
+    &.focusable:active,
+    &.focusable:focus {
+	    clip: auto;
+		clip-path: none;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+		white-space: inherit;
+    }
+}
+

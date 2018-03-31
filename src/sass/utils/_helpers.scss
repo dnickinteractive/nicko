@@ -1,0 +1,42 @@
+/*
+// - Helper Clasess
+//  ========================================================
+//   Styles used to assist in providing some functionality.
+//   Reusable miscellaneous, commonly used styles goes here.
+//   Mixins/Tools can become helpers here via @include.
+//
+//  ========================================================
+*/
+
+/* -----------------------------------------------------------------------------
+ * Hide visually and from screen readers
+ */
+
+.hidden { display: none !important; }
+
+
+/* -----------------------------------------------------------------------------
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible { visibility: hidden; }
+
+
+/* -----------------------------------------------------------------------------
+ * Clearfix (.cf) - Contain floats
+ * Source: //src/sass/tools/_mixins.scss
+ */
+
+.cf { @include clearfix(); }
+
+
+/* -----------------------------------------------------------------------------
+ * Align helpers
+ * Align Left (.al) - Align Center (.ac) - Align Right (.ar)
+ */ 
+
+.al { text-align: left; }
+
+.ac { text-align: center; }
+
+.ar { text-align: right; }
