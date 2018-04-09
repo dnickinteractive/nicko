@@ -7,15 +7,40 @@
 //  =================================================================
 */
 
+// - Page -----------------------------------------------------------
+
 html {
-    color: $site-font-color;
-    font-size: 1em;
-    line-height: 1.4;
+    font-size: $root-font-size;
+    min-height: 100%;
+}
+
+body {
+	color: $site-font-color;
+	font-size: $site-font-size;
+	line-height: $site-line-height;
+	font-weight: $regular-font;
+	font-family: $default-font-family;
 }
 
 
+// - Headings --------------------------------------------------------
 
-//  A better looking default horizontal rule. (1)
+h1, h2, h3, h4, h5, h6 { }
+
+h1 { }
+
+h2 { }
+
+h3 { }
+
+h4 { }
+
+h5 { }
+
+h6 { }
+
+
+//  A better looking default horizontal rule. ------------------------
 
 hr {
     display: block;
@@ -27,7 +52,7 @@ hr {
 }
 
 
-// Allow only vertical resizing of textareas. (1)
+// Allow only vertical resizing of textareas. ------------------------
 
 textarea {
     resize: vertical;
@@ -35,17 +60,12 @@ textarea {
 
 
 /*
- * Remove text-shadow in selection highlight. (1)
+ * Remove text-shadow in selection highlight. ------------------------
  * Customize the background color to match your design.
  */
 
-::-moz-selection {
-    @if $selection-color { background: $selection-color; }
-    text-shadow: none;
-}
-
 ::selection {
-    //background: #b3d4fd; develop this with SASS if statement
+    @if $selection-color { background: $selection-color; }
     text-shadow: none;
 }
 

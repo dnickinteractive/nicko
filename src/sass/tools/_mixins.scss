@@ -1,27 +1,59 @@
 /*
 // - Mixins
-//  =======================================================
+//  ===============================================================
 //   Include al useful mixins here.
 //
-//  =======================================================
+//  ===============================================================
 */
 
 
 /* -----------------------------------------------------------------------------
- * Font Smoothing - 
- * Test and include according your font appearance.
- * It can be used broadly with "body" tag, in specific classes/rules
- * or in special screens using @media queries.
- * - https://www.zachleat.com/web/font-smooth/
- * - http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
- * .usage { @include font-smooth(); }
+ * Media Breakpoints:
+ * Named media query breakpoints with dynamic values.
+ * .usage { @include phone-land { %Content {} }; }
  */
 
-@mixin font-smooth() {
-	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
+@mixin phone-land {
+	@media (min-width: $very-small-width) {
+		@content;
+	}
 }
 
+@mixin tablet-port {
+	@media (min-width: $small-width) {
+		@content;
+	}
+}
+
+@mixin tablet-land {
+	@media (min-width: $medium-width) {
+		@content;
+	}
+}
+
+@mixin wide {
+	@media (min-width: $large-width) {
+		@content;
+	}
+}
+
+@mixin very-wide {
+	@media (min-width: $very-large-width) {
+		@content;
+	}
+}
+
+@mixin retina {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min--moz-device-pixel-ratio: 2),
+		only screen and (-o-min-device-pixel-ratio: 2/1),
+		only screen and (min-device-pixel-ratio: 2),
+		only screen and (min-resolution: 192dpi),
+		only screen and (min-resolution: 2dppx) {
+			@content;
+	}
+}
 
 
 /* -----------------------------------------------------------------------------
@@ -30,12 +62,14 @@
  * .usage { @include wrap($width: 960px, $padding: 10px); }
  */
 
-@mixin wrap($width, $padding: 0) {
-	max-width: $width;
+@mixin wrap($width:false, $padding:false) {
+	@if $width { max-width: $width; }
 	margin-right: auto;
 	margin-left:  auto;
-	padding-right: $padding;
-	padding-left:  $padding;
+	@if $padding {
+		padding-right: $padding;
+		padding-left:  $padding;
+	}
 }
 
 
@@ -86,3 +120,18 @@
     }
 }
 
+
+/* -----------------------------------------------------------------------------
+ * Font Smoothing - 
+ * Test and include according your font appearance.
+ * It can be used broadly with "body" tag, in specific classes/rules
+ * or in special screens using @media queries.
+ * - https://www.zachleat.com/web/font-smooth/
+ * - http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+ * .usage { @include font-smooth(); }
+ */
+
+@mixin font-smooth() {
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}

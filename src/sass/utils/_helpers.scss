@@ -40,3 +40,47 @@
 .ac { text-align: center; }
 
 .ar { text-align: right; }
+
+/* -----------------------------------------------------------------------------
+ * Pull helpers
+ * Pull Left (.pl) -  Pull Right (.pr)
+ */
+ 
+ .pl { float: left; }
+ 
+ .pr { float: right; }
+ 
+ 
+ /* -----------------------------------------------------------------------------
+ * Headings
+ * Redefine headings size. Use this when you need a semantic heading,
+ * but sized different. For example, H2 sized like an H1.
+ *
+ * Usage: <h2 class="h1"></h2>
+ */
+
+.h1 {
+  //@include inuit-font-size($inuit-font-size-h1, $important: true);
+}
+
+.h2 {
+  //@include inuit-font-size($inuit-font-size-h2, $important: true);
+}
+
+.h3 {
+  //@include inuit-font-size($inuit-font-size-h3, $important: true);
+}
+
+.h4 {
+  //@include inuit-font-size($inuit-font-size-h4, $important: true);
+}
+
+.h5 {
+  //@include inuit-font-size($inuit-font-size-h5, $important: true);
+}
+
+.h6 {
+  //@include inuit-font-size($inuit-font-size-h6, $important: true);
+}
+
+ 

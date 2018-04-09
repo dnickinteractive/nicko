@@ -1,12 +1,66 @@
 
-
+// - Settings
+$use-flexboxgrid: true;
 
 
 // - Colors:
 
 $site-font-color: #222; 		// Site font color
-$selection-color: #b3d4fd;		// Text selection color
+$selection-color: #B3D4FD;		// Text selection color
+$link-color: #1EAEDB;			// Link color
+$link-color-hover: #0FA0CE;		// Hover link color
 
 
 // - Estructure
-$site-width: 100% !default;		// Site Width
+
+$site-width: 75em !default;		// Site width
+$outer-margin: 0 !default;		// Site outer margins
+
+
+// - Typography
+
+$root-font-size: 62.5%;			// 62.5% makes all REM measurements 10px sizing ! <-- CHECK THIS
+$site-font-size: 1.6em;			// 1.6em = 16px
+$site-line-height: 1.5em;
+$default-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$thin-font: 100;
+$extralight-font: 200;
+$light-font: 300;
+$regular-font: 400;
+$medium-font: 500;
+$semibold-font: 600;
+$bold-font: 700;
+$extrabold-font: 800;
+$black-font: 900;
+
+
+// - Widths
+//   Ref. - Why use em for media query https://zellwk.com/blog/media-query-units/
+$smallest-width: 20em; // 320px
+$very-small-width: 30em; // 480px
+$small-width: 48em; // 768px
+$medium-width: 60em; // 960px
+$large-width: 75em;  // 1200px
+$very-large-width: 100em; // 1600px
+
+
+// - Grid Settings
+
+$grid-columns: 12 !default;		//------> Set the number of columns you want to use on your layout.
+$gutter-width: 1rem !default;	//------> Set the gutter between columns.
+$grid-outer-margin: 2rem !default;	//--> Set a margin for the container sides.
+$grid-base-name: xs;	//--------------> Name for grid base class
+
+// Create or remove breakpoints for your project
+// Syntax: name (for class) - screen size (for media queries) - grid container (for grid wrapper class).
+$grid-breakpoints:
+  sm $small-width $small-width/1em + $gutter-width, 
+  md $medium-width $medium-width/1em + $gutter-width,
+  lg $large-width $large-width/1em + $gutter-width !default;
+$grid-max-width: $site-width;
+
+
+
+
+
