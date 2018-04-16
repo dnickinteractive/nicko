@@ -1,6 +1,5 @@
 
 // - Settings
-$use-flexboxgrid: true;
 
 
 // - Colors:
@@ -19,8 +18,8 @@ $outer-margin: 0 !default;		// Site outer margins
 
 // - Typography
 
-$root-font-size: 62.5%;			// 62.5% makes all REM measurements 10px sizing ! <-- CHECK THIS
-$site-font-size: 1.6em;			// 1.6em = 16px
+$root-font-size: 100%;			
+$site-font-size: 1em;			
 $site-line-height: 1.5em;
 $default-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -47,10 +46,12 @@ $very-large-width: 100em; // 1600px
 
 // - Grid Settings
 
-$grid-columns: 12 !default;		//------> Set the number of columns you want to use on your layout.
-$gutter-width: 1rem !default;	//------> Set the gutter between columns.
-$grid-outer-margin: 2rem !default;	//--> Set a margin for the container sides.
-$grid-base-name: xs;	//--------------> Name for grid base class
+$use-flexboxgrid: true;				// Use Flexbox based grid
+
+$grid-columns: 12 !default;			// Set the number of columns you want to use on your layout.
+$gutter-width: 1rem !default;		// Set the gutter between columns.
+$grid-outer-margin: 2rem !default;	// Set a margin for the container sides.
+$grid-base-name: xs;				// Name for grid base class
 
 // Create or remove breakpoints for your project
 // Syntax: name (for class) - screen size (for media queries) - grid container (for grid wrapper class).
@@ -60,6 +61,15 @@ $grid-breakpoints:
   lg $large-width $large-width/1em + $gutter-width !default;
 $grid-max-width: $site-width;
 
+// Grid as "SCSS Placeholder" 
+// Use in case you just want to @extend your styles without generate the entire grid system
+// Used as abstractions can be useful to make a small main.css file. For example:
+// 		<div class"my_box1 row></div>
+// 		<div class"my_box2 row></div>
+// 		<div class"my_box3 row></div>
+// It can be useful to style in this way: .my_box1, .my_box2, my_box3 { @extend %row; }
+// And remove the "row" class in the HTML file.
+$grid-as-placeholder: false !default;
 
 
 
